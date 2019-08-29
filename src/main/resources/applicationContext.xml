@@ -25,6 +25,8 @@
 		  class="com.study.springdemo.CricketCoach">
 		<!-- setter injection -->
 		<property name="fortuneService" ref="myFortuneService"></property>
+		<property name="email" value="sport@mail.com"></property>
+		<property name="team" value="Sunrisers"></property>
 	</bean>
 
 </beans>
