@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	
+	<context:property-placeholder location="classpath:sport.properties"></context:property-placeholder>
     <!-- Define your beans here -->
     
     <!-- define the dependency -->
@@ -15,18 +15,25 @@
 	<bean id="myFortuneService"
 		  class="com.study.springdemo.HappyFortuneService">
 	</bean>
+	<bean id="randomeFortune"
+		  class="com.study.springdemo.RandomeFortuneService">
+	</bean>
  	<bean id="myCoach"
  		class="com.study.springdemo.TrackCoach">
 		<!-- constructor injection -->
 		<constructor-arg ref="myFortuneService"></constructor-arg>
  	</bean>
 
+	<bean id="baseballCoach" class="com.study.springdemo.BaseballCoach">
+		<constructor-arg ref="randomeFortune"></constructor-arg>
+	</bean>
+
 	<bean id="myCricketCoach"
 		  class="com.study.springdemo.CricketCoach">
 		<!-- setter injection -->
 		<property name="fortuneService" ref="myFortuneService"></property>
-		<property name="email" value="sport@mail.com"></property>
-		<property name="team" value="Sunrisers"></property>
+		<property name="email" value="${foo.email}"></property>
+		<property name="team" value="${foo.team}"></property>
 	</bean>
 
 </beans>
