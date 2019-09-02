@@ -3,3 +3,5 @@
 .idea/**
 *.iml
 /target
+/thymeleaf/target/
+/thymeleaf/target/classes/templates/
