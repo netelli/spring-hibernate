@@ -2,8 +2,6 @@ package com.study.springdemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Set;
-
 public class SetterDemoApp {
     public static void main(String[] args) {
         //load the spring configuration
