@@ -8,4 +8,9 @@ public class CurlingCoach implements Coach{
     public String getDailyWorkout() {
         return "Do fast";
     }
+
+    @Override
+    public String getDailyFortune() {
+        return null;
+    }
 }
