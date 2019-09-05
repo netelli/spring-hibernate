@@ -5,13 +5,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
-@Scope("prototype")
 public class TennisCoach implements Coach {
+
     private FortuneService fortuneService;
 
-    public TennisCoach() {
-        System.out.println(">> TennisCoach: inside default constructor");
+    public TennisCoach(@Qualifier("fileFortuneService") FortuneService fortuneService) {
+        System.out.println(">> TennisCoach: inside constructor");
+        this.fortuneService = fortuneService;
     }
 
     @Override
@@ -22,5 +26,15 @@ public class TennisCoach implements Coach {
     @Override
     public String getDailyFortune() {
         return fortuneService.getFortune();
+    }
+
+   @PostConstruct
+    public void doStartupStuff() {
+        System.out.println(">> TennisCoach: inside doStartupStuff()");
+    }
+
+    @PreDestroy
+    public void doCleanupStuff() {
+        System.out.println(">> TennisCoach: inside doCleanupStuff()");
     }
 }
