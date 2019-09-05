@@ -9,13 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-anotations</artifactId>
+    <artifactId>util</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.study</groupId>
-            <artifactId>util</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
+
 </project>

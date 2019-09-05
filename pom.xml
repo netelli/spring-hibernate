@@ -23,6 +23,7 @@
     <modules>
         <module>spring-anotations</module>
         <module>spring-intro</module>
+        <module>util</module>
     </modules>
 
     <dependencies>
