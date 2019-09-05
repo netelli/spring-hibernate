@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
     private FortuneService fortuneService;
 
-    public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
+    public TennisCoach(@Qualifier("fileFortuneService") FortuneService fortuneService) {
 //        System.out.println(">> TennisCoach: inside default constructor");
         this.fortuneService = fortuneService;
     }
